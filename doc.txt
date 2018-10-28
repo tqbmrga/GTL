@@ -7,10 +7,10 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update && sudo apt-get install yarn
 
 yarn global add create-react-app
-create-react-app web-gotalu
+create-react-app web
 
-docker build . -t web-gotalu
-docker run -p 8080:80 web-gotalu
+docker build . -t web
+docker run -p 8080:80 web
 
-docker build . -t gtl/web-gotalu
-docker run -p 8080:80 gtl/web-gotalu
+docker build . -t gtl/web
+docker run -p 8080:80 gtl/web
