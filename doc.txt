@@ -1,0 +1,7 @@
+apt install npm
+npm install -g npx
+npx create-react-app my-app
+cd my-app
+npm start
+docker build . -t web-gotalu
+docker run -p 8080:80 web-gotalu
