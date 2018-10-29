@@ -16,4 +16,4 @@ create-react-app web
 docker build . -t gtl/web
 docker run -p 8080:80 gtl/web
 
-#check http://localhost:8080/
+# check http://localhost:8080/
