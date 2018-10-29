@@ -1,3 +1,7 @@
+# check nodejs
+# check yarn
+# check npm
+
 sudo apt remove cmdtest
 sudo apt remove yarn
 
