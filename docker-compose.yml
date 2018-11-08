@@ -1,36 +1,20 @@
 version: '3.4'
 
-services:
-  web:
-    container_name: web
+services:  
+   api-demo:
+    container_name: api-demo
     build:
-      context: ./web/
+      context: ./api-demo/
       dockerfile: Dockerfile
     networks:
        - overlay
     ports:
-      - target: 80
-        published: 80
-        protocol: tcp
-        mode: ingress
-    # volumes:    
-    #   - ./api.account-service/.env:/app/.env
-    stdin_open: true
-    tty: true    
-  api:
-    container_name: api
-    build:
-      context: ./api/
-      dockerfile: Dockerfile
-    networks:
-       - overlay
-    ports:
-      - target: 81
-        published: 8080
-        protocol: tcp
-        mode: ingress
-    # volumes:    
-    #   - ./api.account-service/.env:/app/.env
+      - target: 8080      # port in contaner
+        published: 82     # port in local
+        protocol: tcp     #
+        mode: ingress     #
+    volumes:         
+      - ./api-demo/demo/:/usr/src/app/demo
     stdin_open: true
     tty: true  
   
@@ -44,7 +28,6 @@ services:
   #   restart: always
   #   ports:
   #     - 8080:8080
- 
-
+  
 networks:
   overlay:
