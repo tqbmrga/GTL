@@ -10,7 +10,7 @@ services:
     networks:
        - overlay
     ports:
-      - target: 8080      # port in contaner
+      - target: 80        # port in contaner
         published: 80     # port in local
         protocol: tcp     #
         mode: ingress     #
